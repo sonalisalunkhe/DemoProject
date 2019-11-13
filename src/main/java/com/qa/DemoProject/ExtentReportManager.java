@@ -20,9 +20,9 @@ public class ExtentReportManager {
 	 */
 	public static ExtentReports getInstance() {
 		if (extent == null) {
-			String str_todaysDateTimeStamp = new SimpleDateFormat("dd-MMM-YYYY HH-mm-ss").format(new Date());
-			String newReportPath = TestBaseClass.createNewDirectory(TestBaseClass.parentResultDirectory + "Reports_");
-			String location = newReportPath + "AutomationReport_" + str_todaysDateTimeStamp + ".html";
+			//String str_todaysDateTimeStamp = new SimpleDateFormat("dd-MMM-YYYY HH-mm-ss").format(new Date());
+			String newReportPath = TestBaseClass.createNewDirectory(TestBaseClass.parentResultDirectory + "Reports");
+			String location = newReportPath + "AutomationReport.html";
 			return createInstance(location);
 		} else {
 			return extent;

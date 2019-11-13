@@ -45,7 +45,7 @@ public class TestBaseClass {
 	@BeforeSuite
 	public void beforeSuite() throws Exception {
 		loadPropertiesFile();
-		parentResultDirectory = createNewDirectory(System.getProperty("user.dir") + "/Results/Results_");
+		parentResultDirectory = createNewDirectory(System.getProperty("user.dir") + "/Results");
 		setupReport();
 	}
 	/**
@@ -67,7 +67,7 @@ public class TestBaseClass {
 	 */
 	public static String createNewDirectory(String path) {
 		try {
-			file = new File(path + str_todaysDateStamp);
+			file = new File(path);
 			if (!file.exists()) {
 				file.mkdir();
 				log.info("New directory created successfully");

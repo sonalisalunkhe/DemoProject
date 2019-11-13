@@ -1,5 +1,6 @@
 package com.qa.DemoProject;
 
+import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.containsString;
@@ -83,7 +84,7 @@ public class penpennySignIn extends TestBaseClass{
 				.when()
 				.post(OR.getProperty("signInUrl"))
 				.then()
-				.body("message", containsString("Invalid email or password"))
+				.body("message", containsString("The username or password you have entered is incorrect"))
 				.assertThat()
 				.statusCode(400)
 				.and()
